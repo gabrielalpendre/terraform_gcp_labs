@@ -1,0 +1,19 @@
+# Arquivos de estado local do Terraform
+# Estes arquivos nunca devem ser enviados para o controle de versão.
+terraform.tfstate
+terraform.tfstate.backup
+
+# Diretório de trabalho do Terraform
+# Contém plugins de provedores e módulos baixados.
+.terraform/
+
+# Arquivos de log de falhas
+crash.log
+
+# Arquivo de configuração
+# Contém variáveis específicas do ambiente ou sensíveis.
+lab.conf
+
+# Ignora arquivos .tfvars para evitar o envio acidental de segredos
+*.tfvars
+*.tfvars.json

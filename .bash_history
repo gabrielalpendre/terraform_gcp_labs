@@ -36,3 +36,6 @@ git push -u origin main
 git config --global user.email "gabrielalpendre@users.noreply.github.com"
 git commit --amend --reset-author
 git push origin main --force
+git add .
+git commit -m "add readme and env variables files"
+git push origin main --force
