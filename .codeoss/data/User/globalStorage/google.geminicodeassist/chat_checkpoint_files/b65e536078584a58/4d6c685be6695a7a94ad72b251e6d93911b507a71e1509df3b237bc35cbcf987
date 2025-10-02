@@ -50,22 +50,11 @@ print_completion() {
 
 print_welcome
 
-if [ ! -f "lab.conf" ]; then
-    echo "${RED}Arquivo de configuração 'lab.conf' não encontrado.${RESET}"
-    echo "${YELLOW}Por favor, crie o arquivo 'lab.conf' e defina as variáveis BUCKET, INSTANCE, VPC e ZONE.${RESET}"
-    exit 1
-fi
-
-# Carrega as variáveis do arquivo de configuração
-source lab.conf
-echo "${GREEN}Variáveis carregadas de lab.conf...${RESET}"
-
-# Valida se as variáveis foram definidas
-if [ -z "$BUCKET" ] || [ -z "$INSTANCE" ] || [ -z "$VPC" ] || [ -z "$ZONE" ]; then
-    echo "${RED}Erro: Uma ou mais variáveis necessárias não estão definidas em 'lab.conf'.${RESET}"
-    echo "${YELLOW}Por favor, certifique-se de que BUCKET, INSTANCE, VPC e ZONE estão definidos.${RESET}"
-    exit 1
-fi
+# Get required variables from user
+read -p "${YELLOW}${BOLD}Enter your bucket name: ${RESET}" BUCKET
+read -p "${YELLOW}${BOLD}Enter your instance name: ${RESET}" INSTANCE
+read -p "${YELLOW}${BOLD}Enter your VPC name: ${RESET}" VPC
+read -p "${YELLOW}${BOLD}Enter your zone (e.g. us-central1-a): ${RESET}" ZONE
 
 export BUCKET
 export INSTANCE

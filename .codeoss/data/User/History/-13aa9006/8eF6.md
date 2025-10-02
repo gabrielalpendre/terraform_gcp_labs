@@ -11,23 +11,21 @@ Este script automatiza os passos para o Laboratório de Terraform do Google Clou
 
 ## Como Executar
 
-1.  Crie um arquivo de configuração chamado `lab.conf` com o seguinte conteúdo, substituindo os valores de exemplo:
-    ```bash
-    BUCKET="seu-nome-de-bucket-unico"
-    INSTANCE="sua-instancia"
-    VPC="sua-vpc"
-    ZONE="us-central1-a"
-    ```
-
-2.  Torne o script executável:
+1.  Torne o script executável:
     ```bash
     chmod +x abhishek.sh
     ```
 
-3.  Execute o script:
+2.  Execute o script:
     ```bash
     ./abhishek.sh
     ```
+
+3.  Quando solicitado, insira os seguintes detalhes:
+    -   **Nome do Bucket**: Um nome único para um novo bucket do GCS.
+    -   **Nome da Instância**: Um nome para uma nova instância de VM a ser criada.
+    -   **Nome da VPC**: Um nome para uma nova rede VPC.
+    -   **Zona**: A zona do GCP para os recursos (ex: `us-central1-a`).
 
 O script executará então todos os passos do laboratório automaticamente.
 
@@ -39,7 +37,7 @@ O script é dividido em várias etapas, cada uma realizando um conjunto específ
 
 - O script começa definindo saídas com código de cores para melhor legibilidade.
 - Ele exibe uma mensagem de boas-vindas.
-- Ele carrega as variáveis necessárias (`BUCKET`, `INSTANCE`, `VPC`, `ZONE`) do arquivo `lab.conf`.
+- Ele solicita ao usuário as variáveis necessárias (`BUCKET`, `INSTANCE`, `VPC`, `ZONE`).
 - Ele configura a CLI `gcloud` com a zona especificada e determina a região.
 - Ele cria a estrutura de arquivos Terraform necessária (`main.tf`, `variables.tf`, e módulos para `instances` e `storage`).
 

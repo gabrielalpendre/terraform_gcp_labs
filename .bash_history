@@ -23,3 +23,16 @@ git push -u origin main
 git config --global user.mail "gaschoneweg@gmail.com"
 git config --global user.name "gaschoneweg@gmail.com"
 git init
+git add .
+git commit -m "first commit"
+git config --list
+git config --global --unset user.mail
+git config --global user.email "gaschoneweg@gmail.com"
+git config --global user.name "gaschoneweg@gmail.com"
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/gabrielalpendre/terraform_gcp_labs.git
+git push -u origin main
+git config --global user.email "gabrielalpendre@users.noreply.github.com"
+git commit --amend --reset-author
+git push origin main --force
