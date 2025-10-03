@@ -62,3 +62,12 @@ resource "google_compute_firewall" "tf-firewall"{
   source_tags = ["web"]
   source_ranges = ["0.0.0.0/0"]
 }
+
+resource "google_artifact_registry_repository" "docker_repo" {
+  provider      = google
+  location      = "us-west1"
+  repository_id = "my-repository"
+  description   = "Docker repository for images"
+  format        = "DOCKER"
+}
+
