@@ -21,12 +21,12 @@ Este script automatiza os passos para o Laboratório de Terraform do Google Clou
 
 2.  Torne o script executável:
     ```bash
-    chmod +x abhishek.sh
+    chmod +x tfgen.sh
     ```
 
 3.  Execute o script:
     ```bash
-    ./abhishek.sh
+    ./tfgen.sh
     ```
 
 O script executará então todos os passos do laboratório automaticamente.

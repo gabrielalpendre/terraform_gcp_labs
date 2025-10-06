@@ -1,8 +1,11 @@
-
-variable "project_id" {}
 variable "region" {
-  default = "us-central1"
+ default = "us-west1"
 }
+
 variable "zone" {
-  default = "us-central1-a"
+ default = "us-west1-c"
+}
+
+variable "project_id" {
+ default = "qwiklabs-gcp-00-ad97b1b57ac4"
 }
